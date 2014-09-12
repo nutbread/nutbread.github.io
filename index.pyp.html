@@ -1,4 +1,7 @@
-<!DOCTYPE html><? from info import *; ?>
+<!DOCTYPE html><?
+from info import *;
+pages.sort(key=lambda i: color2sort(i));
+?>
 <html>
 <head>
 	<meta charset="UTF-8" />
@@ -39,7 +42,7 @@
 <div class="main body">
 	<div class="settings_container script_enabled">
 		<div class="settings_sort_by_container">
-			<span class="settings_sort_by_label">Sort by:</span><span class="settings_sort_options"><label class="settings_sort_option"><input class="radio settings_sort_option_radio settings_sort_by" type="radio" name="settings_sort" value="name" checked="checked" data-is-default="true" /><span class="settings_sort_option_text">name</span></label><label class="settings_sort_option"><input class="radio settings_sort_option_radio settings_sort_by" type="radio" name="settings_sort" value="color" /><span class="settings_sort_option_text">color</span></label><label class="settings_sort_option"><input type="checkbox" class="checkbox settings_sort_option_checkbox settings_sort_by_tags" /><span class="settings_sort_option_text">tags</span></label></span>
+			<span class="settings_sort_by_label">Sort by:</span><span class="settings_sort_options"><label class="settings_sort_option"><input class="radio settings_sort_option_radio settings_sort_by" type="radio" name="settings_sort" value="color" data-is-default="true" /><span class="settings_sort_option_text">color</span></label><label class="settings_sort_option"><input class="radio settings_sort_option_radio settings_sort_by" type="radio" name="settings_sort" value="name" checked="checked" /><span class="settings_sort_option_text">name</span></label><label class="settings_sort_option"><input type="checkbox" class="checkbox settings_sort_option_checkbox settings_sort_by_tags" /><span class="settings_sort_option_text">tags</span></label></span>
 		</div>
 		<div class="settings_tags_container">
 			<div class="settings_tags_table">

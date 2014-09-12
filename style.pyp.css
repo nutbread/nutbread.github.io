@@ -1,4 +1,7 @@
-<? from info import *; ?>
+<?
+from info import *;
+pages.sort(key=lambda i: i["name"]);
+?>
 body {
 	padding: 0;
 	margin: 0;

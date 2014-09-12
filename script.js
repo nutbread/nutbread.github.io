@@ -273,8 +273,11 @@
 		var escape_var_simple_replacer = function (m) {
 			return re_encode_simple_map[m[0]];
 		};
-		var unescape_var = function (str) {
+		var unescape_var_pretty = function (str) {
 			return decodeURIComponent(str.replace(re_decode_pretty, "%20"));
+		};
+		var unescape_var = function (str) {
+			return decodeURIComponent(str);
 		};
 
 		var on_window_popstate = function (event) {
@@ -284,7 +287,6 @@
 				pop: true,
 			});
 		}
-
 
 		var trigger = function (event, data) {
 			// Trigger an event
@@ -405,9 +407,10 @@
 
 				return str;
 			},
-			decode_vars: function (str) {
+			decode_vars: function (str, not_pretty) {
 				var vars = {},
 					str_split = str.split("&"),
+					escape_fcn = (not_pretty === true) ? unescape_var : unescape_var_pretty,
 					match, i;
 
 				for (i = 0; i < str_split.length; ++i) {
@@ -416,7 +419,7 @@
 					match = re_decode_var.exec(str_split[i]);
 
 					// Set the var
-					vars[unescape_var(match[1])] = (match[2] == null) ? null : unescape_var(match[2]);
+					vars[escape_fcn(match[1])] = (match[2] == null) ? null : escape_fcn(match[2]);
 				}
 
 				// Return the vars
@@ -969,7 +972,7 @@
 	};
 
 	var on_navigation_change = function (event) {
-		var vars = this.decode_vars(this.strip_hash(this.get_url_parts(window.location.href).hash)),
+		var vars = this.decode_vars(this.strip_hash(this.get_url_parts(window.location.href).hash), true),
 			sort_by = null,
 			show_tags, tags;
 

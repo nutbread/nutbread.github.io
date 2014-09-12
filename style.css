@@ -591,6 +591,34 @@ a.settings_tag>span {
 	color: #ebcd31;
 }
 
+.region_ave a:not(.light_underline) {
+	color: #1257e3;
+}
+.region_ave a.light_underline>span {
+	color: #1257e3;
+}
+.region_ave a.light_nohover_color_hover:hover {
+	color: #1257e3;
+}
+.region_ave .colored {
+	color: #1257e3;
+}
+.region_ave *::selection {
+	background: #1257e3;
+}
+.region_ave *::-moz-selection {
+	background: #1257e3;
+}
+.region_ave .color_indicator {
+	border-left-color: #1257e3;
+}
+.region_ave a.region_description_tag {
+	color: #1257e3;
+}
+.region_ave a.region_description_tag.region_description_tag_selected>span {
+	color: #1257e3;
+}
+
 .region_crx a:not(.light_underline) {
 	color: #4195dc;
 }
