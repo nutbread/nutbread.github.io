@@ -563,6 +563,34 @@ a.settings_tag>span {
 	color: #e38939;
 }
 
+.region_and a:not(.light_underline) {
+	color: #3abde8;
+}
+.region_and a.light_underline>span {
+	color: #3abde8;
+}
+.region_and a.light_nohover_color_hover:hover {
+	color: #3abde8;
+}
+.region_and .colored {
+	color: #3abde8;
+}
+.region_and *::selection {
+	background: #3abde8;
+}
+.region_and *::-moz-selection {
+	background: #3abde8;
+}
+.region_and .color_indicator {
+	border-left-color: #3abde8;
+}
+.region_and a.region_description_tag {
+	color: #3abde8;
+}
+.region_and a.region_description_tag.region_description_tag_selected>span {
+	color: #3abde8;
+}
+
 .region_ass a:not(.light_underline) {
 	color: #ebcd31;
 }

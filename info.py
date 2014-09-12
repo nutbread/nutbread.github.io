@@ -97,6 +97,13 @@ pages = [
 		"tags": [ "c++", "avisynth", ],
 		"color": "#1257e3",
 	},
+	{
+		"name": "and",
+		"name_full": "Android Project Template",
+		"description": "A set of batch commands used to set-up and automate an Android project",
+		"tags": [ "java", "android", ],
+		"color": "#3abde8",
+	},
 ];
 
 
