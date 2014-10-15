@@ -181,7 +181,6 @@ label.checkbox {
 }
 label.checkbox:before {
 	z-index: -1;
-	visibility: hidden;
 	position: absolute;
 	display: block;
 	left: 0;
@@ -189,13 +188,13 @@ label.checkbox:before {
 	bottom: 0;
 	top: 0;
 	content: "";
-	border: 0.125em solid #a0a0a0;
+	border: none;
 	border-radius: 0.125em;
 	background: #ffffff;
 }
 label.checkbox:hover:before,
 label:not([for]):hover label.checkbox:before {
-	visibility: visible;
+	border: 0.125em solid #707070;
 }
 label.checkbox>input[type=checkbox] {
 	position: absolute;
@@ -210,6 +209,17 @@ label.checkbox>svg {
 }
 label.checkbox>svg>polygon {
 	fill: #111111;
+}
+label.checkbox.delete_checkbox>svg>polygon:not(:first-child) {
+	visibility: hidden;
+}
+label.checkbox.delete_checkbox:hover>svg>polygon:first-child,
+label:not([for]):hover label.checkbox.delete_checkbox>svg>polygon:first-child {
+	visibility: hidden;
+}
+label.checkbox.delete_checkbox:hover>svg>polygon:not(:first-child),
+label:not([for]):hover label.checkbox.delete_checkbox>svg>polygon:not(:first-child) {
+	visibility: visible;
 }
 label.checkbox>input[type=checkbox]:checked+svg {
 	display: block;
@@ -673,6 +683,34 @@ a.settings_tag>span {
 }
 .region_crx a.region_description_tag.region_description_tag_selected>span {
 	color: #4195dc;
+}
+
+.region_icm a:not(.light_underline) {
+	color: #e0a926;
+}
+.region_icm a.light_underline>span {
+	color: #e0a926;
+}
+.region_icm a.light_nohover_color_hover:hover {
+	color: #e0a926;
+}
+.region_icm .colored {
+	color: #e0a926;
+}
+.region_icm *::selection {
+	background: #e0a926;
+}
+.region_icm *::-moz-selection {
+	background: #e0a926;
+}
+.region_icm .color_indicator {
+	border-left-color: #e0a926;
+}
+.region_icm a.region_description_tag {
+	color: #e0a926;
+}
+.region_icm a.region_description_tag.region_description_tag_selected>span {
+	color: #e0a926;
 }
 
 .region_lan a:not(.light_underline) {

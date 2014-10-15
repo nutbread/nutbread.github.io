@@ -184,7 +184,6 @@ label.checkbox {
 }
 label.checkbox:before {
 	z-index: -1;
-	visibility: hidden;
 	position: absolute;
 	display: block;
 	left: 0;
@@ -192,13 +191,13 @@ label.checkbox:before {
 	bottom: 0;
 	top: 0;
 	content: "";
-	border: 0.125em solid #a0a0a0;
+	border: none;
 	border-radius: 0.125em;
 	background: #ffffff;
 }
 label.checkbox:hover:before,
 label:not([for]):hover label.checkbox:before {
-	visibility: visible;
+	border: 0.125em solid #707070;
 }
 label.checkbox>input[type=checkbox] {
 	position: absolute;
@@ -213,6 +212,17 @@ label.checkbox>svg {
 }
 label.checkbox>svg>polygon {
 	fill: #111111;
+}
+label.checkbox.delete_checkbox>svg>polygon:not(:first-child) {
+	visibility: hidden;
+}
+label.checkbox.delete_checkbox:hover>svg>polygon:first-child,
+label:not([for]):hover label.checkbox.delete_checkbox>svg>polygon:first-child {
+	visibility: hidden;
+}
+label.checkbox.delete_checkbox:hover>svg>polygon:not(:first-child),
+label:not([for]):hover label.checkbox.delete_checkbox>svg>polygon:not(:first-child) {
+	visibility: visible;
 }
 label.checkbox>input[type=checkbox]:checked+svg {
 	display: block;

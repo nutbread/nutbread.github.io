@@ -104,6 +104,13 @@ pages = [
 		"tags": [ "java", "android", ],
 		"color": "#3abde8",
 	},
+	{
+		"name": "icm",
+		"name_full": "Image Coordinate Mapper",
+		"description": "Quick way to mark coordinates on an image",
+		"tags": [ "javascript", ],
+		"color": "#e0a926",
+	},
 ];
 
 
