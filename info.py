@@ -113,6 +113,14 @@ pages = [
 	},
 ];
 
+gists = [
+	{
+		"name": "Google Logo Remover",
+		"description": "Hides the logo on the Google homepage because it changes too much",
+		"url": "https://gist.github.com/nutbread/7c8a536fc19ef5f6151d",
+	},
+];
+
 
 
 def generate_region_tags(page):

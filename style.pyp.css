@@ -454,6 +454,7 @@ a.rainbow_underline:not(.rainbow_underline_inside)>span {
 	font-weight: bold;
 	display: inline-block;
 	margin-right: 0.5em;
+	vertical-align: middle;
 }
 .settings_sort_options {
 	display: inline-block;
@@ -678,4 +679,34 @@ a.region_description_tag.region_description_tag_selected {
 	padding: 0.5em 0 0.5em 0.5em;
 }
 
+
+
+.gist_label {
+	padding: 3em 0 1em;
+}
+.gist_label>div {
+	border-bottom: 1px solid #808080;
+	color: #707070;
+	font-size: 2em;
+}
+.gist_container {
+	margin-bottom: -1em;
+}
+.gist {
+	margin-bottom: 1em;
+}
+.gist_title_name {
+	font-size: 2em;
+	line-height: 1.125em;
+}
+.gist_title_about {
+	font-size: 1em;
+	line-height: 1.125em;
+}
+a.gist_title_name_link {
+	color: #808080;
+}
+a.gist_title_name_link>span {
+	color: #111111;
+}
 

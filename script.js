@@ -771,6 +771,9 @@
 
 		set_show_tags(true);
 		set_selected_tags([ tag_name ], true, is_selected);
+
+		// Update URL
+		update_url_hash();
 	};
 
 	var on_sort_by_change = function (event) {
