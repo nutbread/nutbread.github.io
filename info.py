@@ -119,6 +119,11 @@ gists = [
 		"description": "Hides the logo on the Google homepage because it changes too much",
 		"url": "https://gist.github.com/nutbread/7c8a536fc19ef5f6151d",
 	},
+	{
+		"name": "Python CRC Checker",
+		"description": "Easy way to get the CRC32 of files, and automatically rename them if necessary",
+		"url": "https://gist.github.com/nutbread/b8111bb93156a20d3bb4",
+	},
 ];
 
 
