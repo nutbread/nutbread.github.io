@@ -111,6 +111,13 @@ pages = [
 		"tags": [ "javascript", ],
 		"color": "#e0a926",
 	},
+	{
+		"name": "yia",
+		"name_full": "YouTube Iframe API",
+		"description": "Easily create and interact with embedded YouTube videos",
+		"tags": [ "javascript", "youtube", ],
+		"color": "#e45e28",
+	},
 ];
 
 gists = [

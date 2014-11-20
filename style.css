@@ -854,6 +854,34 @@ a.settings_tag>span {
 	color: #60bf20;
 }
 
+.region_yia a:not(.light_underline) {
+	color: #e45e28;
+}
+.region_yia a.light_underline>span {
+	color: #e45e28;
+}
+.region_yia a.light_nohover_color_hover:hover {
+	color: #e45e28;
+}
+.region_yia .colored {
+	color: #e45e28;
+}
+.region_yia *::selection {
+	background: #e45e28;
+}
+.region_yia *::-moz-selection {
+	background: #e45e28;
+}
+.region_yia .color_indicator {
+	border-left-color: #e45e28;
+}
+.region_yia a.region_description_tag {
+	color: #e45e28;
+}
+.region_yia a.region_description_tag.region_description_tag_selected>span {
+	color: #e45e28;
+}
+
 
 
 
