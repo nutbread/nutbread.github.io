@@ -1,6 +1,5 @@
 <?
 from info import *;
-pages.sort(key=lambda i: i["name"]);
 ?>
 body {
 	padding: 0;
@@ -548,46 +547,6 @@ a.settings_tag>span {
 
 
 
-<? #/*
-
-style = '''
-.region_{0:s} a:not(.light_underline) {{
-	color: {1:s};
-}}
-.region_{0:s} a.light_underline>span {{
-	color: {1:s};
-}}
-.region_{0:s} a.light_nohover_color_hover:hover {{
-	color: {1:s};
-}}
-.region_{0:s} .colored {{
-	color: {1:s};
-}}
-.region_{0:s} *::selection {{
-	background: {1:s};
-}}
-.region_{0:s} *::-moz-selection {{
-	background: {1:s};
-}}
-.region_{0:s} .color_indicator {{
-	border-left-color: {1:s};
-}}
-.region_{0:s} a.region_description_tag {{
-	color: {1:s};
-}}
-.region_{0:s} a.region_description_tag.region_description_tag_selected>span {{
-	color: {1:s};
-}}
-''';
-
-for p in pages:
-	pyp.write(style.format(p["name"], p["color"]));
-
-#*/
-?>
-
-
-
 .region_container {
 	margin-bottom: -1em;
 }
@@ -695,18 +654,104 @@ a.region_description_tag.region_description_tag_selected {
 .gist {
 	margin-bottom: 1em;
 }
-.gist_title_name {
-	font-size: 2em;
-	line-height: 1.125em;
-}
-.gist_title_about {
-	font-size: 1em;
-	line-height: 1.125em;
+.gist_title {
+	white-space: nowrap;
 }
 a.gist_title_name_link {
+	font-size: 2em;
+	line-height: 1.125em;
 	color: #808080;
 }
 a.gist_title_name_link>span {
 	color: #111111;
 }
+.gist_title_separator {
+	font-size: 1.75em;
+	display: inline-block;
+	margin: 0 0.25em;
+	color: #c8c8c8;
+	line-height: 1em;
+	font-weight: bold;
+}
+.gist_title_file {
+	font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+	position: relative;
+	font-size: 1.5em;
+	line-height: 1em;
+	display: inline-block;
+	text-align: right;
+	color: #606060;
+}
+.gist_about {
+	font-size: 1em;
+	line-height: 1.125em;
+}
 
+
+
+<? #/*
+
+style = '''
+.region_{0:s} a:not(.light_underline) {{
+	color: {1:s};
+}}
+.region_{0:s} a.light_underline>span {{
+	color: {1:s};
+}}
+.region_{0:s} a.light_nohover_color_hover:hover {{
+	color: {1:s};
+}}
+.region_{0:s} .colored {{
+	color: {1:s};
+}}
+.region_{0:s} *::selection {{
+	background: {1:s};
+}}
+.region_{0:s} *::-moz-selection {{
+	background: {1:s};
+}}
+.region_{0:s} .color_indicator {{
+	border-left-color: {1:s};
+}}
+.region_{0:s} a.region_description_tag {{
+	color: {1:s};
+}}
+.region_{0:s} a.region_description_tag.region_description_tag_selected>span {{
+	color: {1:s};
+}}
+''';
+
+for r in repos:
+	pyp.write(style.format(r["name"], r["color"]));
+
+
+
+style = '''
+.gist.gist_type_{0:s} a:not(.light_underline) {{
+	color: {1:s};
+}}
+.gist.gist_type_{0:s} a.light_underline>span {{
+	color: {1:s};
+}}
+.gist.gist_type_{0:s} a.light_nohover_color_hover:hover {{
+	color: {1:s};
+}}
+.gist.gist_type_{0:s} .colored {{
+	color: {1:s};
+}}
+.gist.gist_type_{0:s} *::selection {{
+	background: {1:s};
+}}
+.gist.gist_type_{0:s} *::-moz-selection {{
+	background: {1:s};
+}}
+.gist.gist_type_{0:s} .color_indicator {{
+	border-left-color: {1:s};
+}}
+''';
+
+for g in gist_meta:
+	pyp.write(style.format(g[0], g[1]));
+
+#*/
+?>

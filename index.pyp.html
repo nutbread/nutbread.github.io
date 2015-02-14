@@ -1,7 +1,5 @@
 <!DOCTYPE html><?
 from info import *;
-pages.sort(key=lambda i: color2sort(i));
-gists.sort(key=lambda i: i["name"]);
 ?>
 <html>
 <head>
@@ -85,8 +83,8 @@ region = ...?>
 		</div>
 <?...;
 
-for p in pages:
-	pyp.write(region.format(p["name"], p["name_full"], p["description"], generate_region_tags(p)));
+for r in repos:
+	pyp.write(region.format(r["name"], r["name_full"], r["description"], generate_region_tags(r)));
 
 ?>
 	</div>
@@ -96,16 +94,23 @@ for p in pages:
 	<div class="gist_container">
 <?
 region = ...?>
-		<div class="gist">
+		<div class="gist gist_type_{4:s}">
 			<div class="color_indicator">
-				<div class="gist_title_name"><a href="{2:s}" class="gist_title_name_link"><span>{0:s}</span></a></div>
-				<div class="gist_title_about">{1:s}</div>
+				<div class="gist_title">
+					<a href="{2:s}" class="gist_title_name_link"><span>{0:s}</span></a>{3:s}
+				</div>
+				<div class="gist_about">{1:s}</div>
 			</div>
 		</div>
 <?...;
 
-for p in gists:
-	pyp.write(region.format(p["name"], p["description"], p["url"]));
+for gm in gist_meta:
+	if (gm[0] in gist_classes):
+		for g in gist_classes[gm[0]]:
+			file = u'';
+			if ("main_file" in g):
+				file = u'<span class="gist_title_separator">/</span><span class="gist_title_file">{0:s}</span>'.format(g["main_file"]);
+			pyp.write(region.format(g["name"], g["description"], g["url"], file, g["type"]));
 
 ?>
 	</div>

@@ -24,8 +24,39 @@ def color2sort(page):
 
 
 
-# Info
-pages = [
+def generate_region_tags(page):
+	value = [];
+
+	has_info = "info" in page;
+	has_info = False;
+
+	if (has_info):
+		value.append(
+			'<span class="region_description_text">{0:s}</span>'.format(page["info"])
+		);
+
+	if ("tags" in page and len(page["tags"]) > 0):
+		value.append('<span class="region_description_tags">');
+
+		if (has_info):
+			value.append(' &bull; ');
+
+		for i in range(len(page["tags"])):
+			tag = page["tags"][i];
+
+			if (i > 0):
+				value.append(' &bull; ');
+
+			value.append('<a class="region_description_tag"><span>{0:s}</span></a>'.format(tag));
+
+		value.append('</span>');
+
+	return "".join(value);
+
+
+
+# Repositories
+repos = [
 	{
 		"name": "crx",
 		"name_full": "Chrome Extension Building Tools",
@@ -118,50 +149,93 @@ pages = [
 		"tags": [ "javascript", "youtube", ],
 		"color": "#e45e28",
 	},
+	{
+		"name": "ebml",
+		"name_full": "EBML Library",
+		"description": "A library for reading, writing, and modifying the Matroska container's EBML format",
+		"tags": [ "python", "library" ],
+		"color": "#4728c7",
+	},
+];
+
+
+
+# Gists
+gist_meta = [
+	( "javascript" , "#8000ff" ),
+	( "userscript" , "#0080ff" ),
+	( "python" , "#60c020" ),
 ];
 
 gists = [
 	{
-		"name": "Google Logo Remover",
+		"name": "Google logo remover",
+		"main_file": "google_nologo.user.js",
 		"description": "Hides the logo on the Google homepage because it changes too much",
 		"url": "https://gist.github.com/nutbread/7c8a536fc19ef5f6151d",
+		"type": "userscript",
 	},
 	{
-		"name": "Python CRC Checker",
+		"name": "CRC checker",
+		"main_file": "crc.py",
 		"description": "Easy way to get the CRC32 of files, and automatically rename them if necessary",
 		"url": "https://gist.github.com/nutbread/b8111bb93156a20d3bb4",
+		"type": "python",
+	},
+	{
+		"name": ".zip creation library",
+		"main_file": "Zipper.js",
+		"description": "Class to put arbitrary data into a storage-mode .zip file",
+		"url": "https://gist.github.com/nutbread/6d3f939d9295e95f135e",
+		"type": "javascript",
+	},
+	{
+		"name": "DOM node generation",
+		"main_file": "$.js",
+		"description": "Brief node generation without the overhead of jQuery",
+		"url": "https://gist.github.com/nutbread/58f73919109a100cb481",
+		"type": "javascript",
+	},
+	{
+		"name": "Timing function",
+		"main_file": "timing.js",
+		"description": "High precision interval timing function",
+		"url": "https://gist.github.com/nutbread/011ea50a28190bb66224",
+		"type": "javascript",
+	},
+	{
+		"name": "Document ready function",
+		"main_file": "on_ready.js",
+		"description": "Document ready detection for a variety of circumstances",
+		"url": "https://gist.github.com/nutbread/db273ef22203755184c5",
+		"type": "javascript",
+	},
+	{
+		"name": "Asynchronous data saving",
+		"main_file": "Save.js",
+		"description": "Asynchronous saving for scripts in Greasemonkey, Tampermonkey, Chrome, and webpage embeding",
+		"url": "https://gist.github.com/nutbread/ac22d7f9419c55e3f96f",
+		"type": "javascript",
+	},
+	{
+		"name": "Fast bind",
+		"main_file": "bind.js",
+		"description": "Faster function binding than function.bind(...)",
+		"url": "https://gist.github.com/nutbread/fbdb8970e0a8c8124742",
+		"type": "javascript",
 	},
 ];
 
 
 
-def generate_region_tags(page):
-	value = [];
-
-	has_info = "info" in page;
-	has_info = False;
-
-	if (has_info):
-		value.append(
-			'<span class="region_description_text">{0:s}</span>'.format(page["info"])
-		);
-
-	if ("tags" in page and len(page["tags"]) > 0):
-		value.append('<span class="region_description_tags">');
-
-		if (has_info):
-			value.append(' &bull; ');
-
-		for i in range(len(page["tags"])):
-			tag = page["tags"][i];
-
-			if (i > 0):
-				value.append(' &bull; ');
-
-			value.append('<a class="region_description_tag"><span>{0:s}</span></a>'.format(tag));
-
-		value.append('</span>');
-
-	return "".join(value);
+# Sort
+repos.sort(key=lambda i: color2sort(i));
+gist_classes = {};
+for g in gists:
+	if (g["type"] not in gist_classes):
+		gist_classes[g["type"]] = [];
+	gist_classes[g["type"]].append(g);
+for g,v in gist_classes.items():
+	v.sort(key=lambda i: i["main_file"].lower());
 
 
