@@ -1052,6 +1052,34 @@ a.gist_title_name_link>span {
 	color: #d73c9e;
 }
 
+.region_lex a:not(.light_underline) {
+	color: #cd0e5a;
+}
+.region_lex a.light_underline>span {
+	color: #cd0e5a;
+}
+.region_lex a.light_nohover_color_hover:hover {
+	color: #cd0e5a;
+}
+.region_lex .colored {
+	color: #cd0e5a;
+}
+.region_lex *::selection {
+	background: #cd0e5a;
+}
+.region_lex *::-moz-selection {
+	background: #cd0e5a;
+}
+.region_lex .color_indicator {
+	border-left-color: #cd0e5a;
+}
+.region_lex a.region_description_tag {
+	color: #cd0e5a;
+}
+.region_lex a.region_description_tag.region_description_tag_selected>span {
+	color: #cd0e5a;
+}
+
 .gist.gist_type_javascript a:not(.light_underline) {
 	color: #8000ff;
 }
