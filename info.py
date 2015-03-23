@@ -159,7 +159,7 @@ repos = [
 	{
 		"name": "lex",
 		"name_full": "Lexical Analysis Libraries",
-		"description": "Simple lexical analysis libraries for JavaScript",
+		"description": "Simple lexical analysis libraries for JavaScript and Python",
 		"tags": [ "javascript", "python", "library" ],
 		"color": "#cd0e5a",
 	},
