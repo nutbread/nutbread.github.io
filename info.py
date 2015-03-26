@@ -231,6 +231,20 @@ gists = [
 		"url": "https://gist.github.com/nutbread/fbdb8970e0a8c8124742",
 		"type": "javascript",
 	},
+	{
+		"name": "Colorspace conversions",
+		"main_file": "Color.js",
+		"description": "Some colorspace conversion functions similar to Python's <a href=\"https://docs.python.org/2/library/colorsys.html\" target=\"_blank\"><code>colorsys</code></a> library",
+		"url": "https://gist.github.com/nutbread/776059380da9e2e9b483",
+		"type": "javascript",
+	},
+	{
+		"name": "URL parsing for browsers",
+		"main_file": "URLParser.js",
+		"description": "Similar functionality as that found in the node.js <a href=\"https://nodejs.org/api/url.html\" target=\"_blank\"><code>url</code></a> library",
+		"url": "https://gist.github.com/nutbread/ecc6d75f19db3e95ce91",
+		"type": "javascript",
+	},
 ];
 
 
