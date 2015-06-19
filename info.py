@@ -163,6 +163,13 @@ repos = [
 		"tags": [ "javascript", "python", "library" ],
 		"color": "#cd0e5a",
 	},
+	{
+		"name": "noise",
+		"name_full": "Simplex Noise Library",
+		"description": "Templated CPU implementation of simplex noise",
+		"tags": [ "c++", "library", "noise" ],
+		"color": "#1cb327",
+	},
 ];
 
 
@@ -244,6 +251,13 @@ gists = [
 		"description": "Similar functionality as that found in the node.js <a href=\"https://nodejs.org/api/url.html\" target=\"_blank\"><code>url</code></a> library",
 		"url": "https://gist.github.com/nutbread/ecc6d75f19db3e95ce91",
 		"type": "javascript",
+	},
+	{
+		"name": "Lambert W function",
+		"main_file": "productlog.js",
+		"description": "Improved Python implementation of the <a href=\"https://en.wikipedia.org/wiki/Lambert_W_function\" target=\"_blank\"><code>Lambert W function</code></a>",
+		"url": "https://gist.github.com/nutbread/2e718018c31fa92514a7",
+		"type": "python",
 	},
 ];
 

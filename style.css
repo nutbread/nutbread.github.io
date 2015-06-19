@@ -856,6 +856,34 @@ a.gist_title_name_link>span {
 	color: #60bf20;
 }
 
+.region_noise a:not(.light_underline) {
+	color: #1cb327;
+}
+.region_noise a.light_underline>span {
+	color: #1cb327;
+}
+.region_noise a.light_nohover_color_hover:hover {
+	color: #1cb327;
+}
+.region_noise .colored {
+	color: #1cb327;
+}
+.region_noise *::selection {
+	background: #1cb327;
+}
+.region_noise *::-moz-selection {
+	background: #1cb327;
+}
+.region_noise .color_indicator {
+	border-left-color: #1cb327;
+}
+.region_noise a.region_description_tag {
+	color: #1cb327;
+}
+.region_noise a.region_description_tag.region_description_tag_selected>span {
+	color: #1cb327;
+}
+
 .region_t2m a:not(.light_underline) {
 	color: #30b194;
 }
