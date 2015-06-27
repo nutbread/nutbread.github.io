@@ -409,6 +409,7 @@ a.light_nohover_color_hover:hover {
 
 
 
+<? if (colored): pyp.write( ...?>
 .rainbow_underline.rainbow_underline_inside>.rainbow_underline_inner,
 a.rainbow_underline:not(.rainbow_underline_inside) {
 	position: relative;
@@ -442,6 +443,8 @@ a.rainbow_underline:not(.rainbow_underline_inside):hover:before {
 a.rainbow_underline:not(.rainbow_underline_inside)>span {
 	position: relative;
 }
+<?... ); ?>
+
 
 
 .settings_container {

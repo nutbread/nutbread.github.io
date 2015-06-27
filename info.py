@@ -20,7 +20,7 @@ def hex2color(color_str):
 def color2sort(page):
 	c = hex2color(page["color"]);
 	hsv = colorsys.rgb_to_hsv(c[0], c[1], c[2]);
-	return hsv[0];
+	return (hsv[0], page["name"]);
 
 
 
@@ -52,6 +52,11 @@ def generate_region_tags(page):
 		value.append('</span>');
 
 	return "".join(value);
+
+
+
+# Color settings
+colored = False;
 
 
 
@@ -179,6 +184,7 @@ gist_meta = [
 	( "javascript" , "#8000ff" ),
 	( "userscript" , "#0080ff" ),
 	( "python" , "#60c020" ),
+	( "cpp" , "#e09a14" ),
 ];
 
 gists = [
@@ -259,7 +265,21 @@ gists = [
 		"url": "https://gist.github.com/nutbread/2e718018c31fa92514a7",
 		"type": "python",
 	},
+	{
+		"name": "C++11 assertions",
+		"main_file": "Assert.cpp",
+		"description": "Improved, modifiable C++11 assertions with message capability",
+		"url": "https://gist.github.com/nutbread/313583c979274564d2f8",
+		"type": "cpp",
+	},
 ];
+
+
+
+if (not colored):
+	c = "#404040";
+	gist_meta = [ (x[0],c) for x in gist_meta ];
+	for r in repos: r["color"] = c;
 
 
 
