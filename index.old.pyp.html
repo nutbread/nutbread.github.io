@@ -1,0 +1,124 @@
+<!DOCTYPE html><?
+from info import *;
+?>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="description" content="Nutbread." />
+	<meta name="keywords" content="nutbread,nut,bread" />
+	<meta name="author" content="nutbread" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>nutbread</title>
+	<link rel="shortcut icon" href="favicon.png" />
+	<link rel="stylesheet" href="style.old.css" />
+	<script src="script.old.js"></script>
+</head>
+<body>
+
+
+<div class="header_bar">
+	<div class="main main_no_overflow header">
+
+		<table class="header_table"><tbody>
+			<tr>
+				<td class="header_table_cell">
+					<div class="header_table_name">
+						<a class="header_table_name_user link_author rainbow_underline" href=""><span>nutbread</span></a>
+					</div>
+				</td>
+				<td class="header_table_cell header_table_cell_full">
+				</td>
+				<td class="header_table_cell">
+					<a class="header_table_view_on_github link_external link_view_on_github light_nohover_color_hover" href="https://github.com/nutbread">
+						<div class="header_table_view_on_github_line1">view on</div>
+						<div class="header_table_view_on_github_line2">github</div>
+					</a>
+				</td>
+			</tr>
+		</tbody></table>
+
+	</div>
+</div>
+<div class="main body">
+	<div class="settings_container script">
+		<div class="settings_sort_by_container">
+			<span class="settings_sort_by_label">Sort by:</span><span class="settings_sort_options"><label class="settings_sort_option"><input class="radio settings_sort_option_radio settings_sort_by" type="radio" name="settings_sort" value="color" data-is-default="true" /><span class="settings_sort_option_text">color</span></label><label class="settings_sort_option"><input class="radio settings_sort_option_radio settings_sort_by" type="radio" name="settings_sort" value="name" checked="checked" /><span class="settings_sort_option_text">name</span></label><label class="settings_sort_option"><input type="checkbox" class="checkbox settings_sort_option_checkbox settings_sort_by_tags" /><span class="settings_sort_option_text">tags</span></label></span>
+		</div>
+		<div class="settings_tags_container">
+			<div class="settings_tags_table">
+				<div class="settings_tags_table_cell_left">
+					<div class="settings_tags_label">Tags:</div>
+				</div>
+				<div class="settings_tags_table_cell_right">
+					<div class="settings_tags"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="region_container">
+<?
+region = ...?>
+		<div class="region region_{0:s}">
+			<div class="color_indicator">
+				<div class="region_title_block">
+					<div class="region_title_block_left">
+						<div class="region_title">
+							<a href="https://nutbread.github.io/{0:s}/" class="link_repository_page light_underline"><span>{0:s}</span></a>
+						</div>
+					</div>
+					<div class="region_title_block_middle">
+						<div class="region_title_separator">/</div>
+					</div>
+					<div class="region_title_block_right">
+						<div class="region_title_name">{1:s}</div>
+						<div class="region_title_about">{2:s}</div>
+					</div>
+				</div>
+				<div class="region_body">
+					<div class="region_description">
+						{3:s}
+					</div>
+				</div>
+			</div>
+		</div>
+<?...;
+
+for r in repos:
+	pyp.write(region.format(r["name"], r["name_full"], r["description"], generate_region_tags(r)));
+
+?>
+	</div>
+
+	<div class="gist_label"><div>Gists</div></div>
+
+	<div class="gist_container">
+<?
+region = ...?>
+		<div class="gist gist_type_{4:s}">
+			<div class="color_indicator">
+				<div class="gist_title">
+					<a href="{2:s}" class="gist_title_name_link"><span>{0:s}</span></a>{3:s}
+				</div>
+				<div class="gist_about">{1:s}</div>
+			</div>
+		</div>
+<?...;
+
+for gm in gist_meta:
+	if (gm[0] in gist_classes):
+		for g in gist_classes[gm[0]]:
+			file = u'';
+			if ("main_file" in g):
+				file = u'<span class="gist_title_separator">/</span><span class="gist_title_file">{0:s}</span>'.format(g["main_file"]);
+			pyp.write(region.format(g["name"], g["description"], g["url"], file, g["type"]));
+
+?>
+	</div>
+
+</div>
+
+
+</body>
+</html>
+

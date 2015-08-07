@@ -55,8 +55,39 @@ def generate_region_tags(page):
 
 
 
+def generate_repository_tags(page):
+	value = [];
+
+	has_info = "info" in page;
+	has_info = False;
+
+	if (has_info):
+		value.append(
+			'<span class="repository_info_text">{0:s}</span>'.format(page["info"])
+		);
+
+	if ("tags" in page and len(page["tags"]) > 0):
+		value.append('<div class="repository_tags">');
+
+		if (has_info):
+			value.append(' &bull; ');
+
+		for i in range(len(page["tags"])):
+			tag = page["tags"][i];
+
+			if (i > 0):
+				value.append(' &bull; ');
+
+			value.append('<span class="repository_tag"><span>{0:s}</span></span>'.format(tag));
+
+		value.append('</div>');
+
+	return "".join(value);
+
+
+
 # Color settings
-colored = False;
+colored = True;
 
 
 
@@ -181,6 +212,7 @@ repos = [
 
 # Gists
 gist_meta = [
+	( "html" , "#d9319c" ),
 	( "javascript" , "#8000ff" ),
 	( "userscript" , "#0080ff" ),
 	( "python" , "#60c020" ),
@@ -247,21 +279,21 @@ gists = [
 	{
 		"name": "Colorspace conversions",
 		"main_file": "Color.js",
-		"description": "Some colorspace conversion functions similar to Python's <a href=\"https://docs.python.org/2/library/colorsys.html\" target=\"_blank\"><code>colorsys</code></a> library",
+		"description": "Some colorspace conversion functions similar to Python's <a class=\"light_underline light_underline_hover\" href=\"https://docs.python.org/2/library/colorsys.html\" target=\"_blank\"><span><code>colorsys</code></span></a> library",
 		"url": "https://gist.github.com/nutbread/776059380da9e2e9b483",
 		"type": "javascript",
 	},
 	{
 		"name": "URL parsing for browsers",
 		"main_file": "URLParser.js",
-		"description": "Similar functionality as that found in the node.js <a href=\"https://nodejs.org/api/url.html\" target=\"_blank\"><code>url</code></a> library",
+		"description": "Similar functionality as that found in the node.js <a class=\"light_underline light_underline_hover\" href=\"https://nodejs.org/api/url.html\" target=\"_blank\"><span><code>url</code></span></a> library",
 		"url": "https://gist.github.com/nutbread/ecc6d75f19db3e95ce91",
 		"type": "javascript",
 	},
 	{
 		"name": "Lambert W function",
-		"main_file": "productlog.js",
-		"description": "Improved Python implementation of the <a href=\"https://en.wikipedia.org/wiki/Lambert_W_function\" target=\"_blank\"><code>Lambert W function</code></a>",
+		"main_file": "productlog.py",
+		"description": "Improved Python implementation of the <a class=\"light_underline light_underline_hover\" href=\"https://en.wikipedia.org/wiki/Lambert_W_function\" target=\"_blank\"><span>Lambert W function</span></a>",
 		"url": "https://gist.github.com/nutbread/2e718018c31fa92514a7",
 		"type": "python",
 	},
@@ -272,6 +304,27 @@ gists = [
 		"url": "https://gist.github.com/nutbread/313583c979274564d2f8",
 		"type": "cpp",
 	},
+	{
+		"name": "Int to float precision loss test",
+		"main_file": "int_to_float_exact.py",
+		"description": "Test if an integer value can be converted to a float and retain its exact representation",
+		"url": "https://gist.github.com/nutbread/62f9ed5cb8b0a124d9b3",
+		"type": "python",
+	},
+	{
+		"name": "Colored command prompt",
+		"main_file": "ccmd.cpp",
+		"description": "Exactly as the title says",
+		"url": "https://gist.github.com/nutbread/e24c9a557de3ecba4bcc",
+		"type": "cpp",
+	},
+	{
+		"name": "CSS transition stopping",
+		"main_file": "transitions.html",
+		"description": "A JavaScript method of stopping CSS transitions while they're active",
+		"url": "https://gist.github.com/nutbread/cece7128350dbdbb7271",
+		"type": "html",
+	}
 ];
 
 
