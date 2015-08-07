@@ -1,6 +1,10 @@
 (function () {
 	"use strict";
 
+	// Noscript test
+	var re_noscript = /#!?no[ _-]?script$/i;
+	if (re_noscript.test(window.location.href)) return;
+
 	// Function for performing actions as soon as possible
 	var on_ready = (function () {
 
@@ -1916,11 +1920,18 @@
 	};
 
 	var on_navigation_change = function (event) {
-		var vars = nav.decode_vars(nav.strip_hash(nav.get_hash(window.location.href))),
+		var hash = nav.get_hash(window.location.href),
 			sort_by = null,
-			show_tags, tags;
+			show_tags, tags, vars;
+
+		// Noscript
+		if (re_noscript.test(hash)) {
+			window.location.reload(false);
+			return;
+		}
 
 		// Get values
+		vars = nav.decode_vars(nav.strip_hash(hash));
 		show_tags = ("tags" in vars);
 		if ("sort-by" in vars) {
 			sort_by = vars["sort-by"];

@@ -578,6 +578,9 @@ a.rainbow_underline:not(.rainbow_underline_inside)>span {
 	position: relative;
 	display: inline-block;
 	padding-right: 4em;
+	max-width: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	border-bottom: 1px solid #707070;
 }
 
