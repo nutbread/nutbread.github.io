@@ -64,20 +64,20 @@ region = ...?>
 				<div class="region_title_block">
 					<div class="region_title_block_left">
 						<div class="region_title">
-							<a href="https://nutbread.github.io/{0:s}/" class="link_repository_page light_underline"><span>{0:s}</span></a>
+							<a href="{2:s}" class="link_repository_page light_underline"><span>{1:s}</span></a>
 						</div>
 					</div>
 					<div class="region_title_block_middle">
 						<div class="region_title_separator">/</div>
 					</div>
 					<div class="region_title_block_right">
-						<div class="region_title_name">{1:s}</div>
-						<div class="region_title_about">{2:s}</div>
+						<div class="region_title_name">{3:s}</div>
+						<div class="region_title_about">{4:s}</div>
 					</div>
 				</div>
 				<div class="region_body">
 					<div class="region_description">
-						{3:s}
+						{5:s}
 					</div>
 				</div>
 			</div>
@@ -85,7 +85,12 @@ region = ...?>
 <?...;
 
 for r in repos:
-	pyp.write(region.format(r["name"], r["name_full"], r["description"], generate_region_tags(r)));
+	name = r["name"];
+	name_true = name;
+	if ("name_true" in r): name_true = r["name_true"];
+	url = "https://nutbread.github.io/{0:s}/".format(name);
+	if ("url" in r): url = r["url"];
+	pyp.write(region.format(name, name_true, url, r["name_full"], r["description"], generate_region_tags(r)));
 
 ?>
 	</div>

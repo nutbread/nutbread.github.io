@@ -1062,6 +1062,38 @@ a.settings_tag>span {
 	color: #ebcd31;
 }
 
+.repository_pngpp a:not(.light_underline) {
+	color: #b8cf23;
+}
+.repository_pngpp .light_underline>span {
+	color: #b8cf23;
+}
+.repository_pngpp .light_nohover_color_hover:hover {
+	color: #b8cf23;
+}
+.repository_pngpp .colored_underline {
+	color: #b8cf23;
+}
+.repository_pngpp .colored {
+	color: #b8cf23;
+}
+.repository_pngpp ::selection {
+	background-color: #b8cf23;
+}
+.repository_pngpp ::-moz-selection {
+	background-color: #b8cf23;
+}
+.repository_pngpp.repository_color_indicator,
+.repository_pngpp .repository_color_indicator {
+	border-left-color: #b8cf23;
+}
+.repository_pngpp .repository_tag {
+	color: #b8cf23;
+}
+.repository_pngpp x.repository_tag.repository_tag_selected>span {
+	color: #b8cf23;
+}
+
 .repository_vsd a:not(.light_underline) {
 	color: #60bf20;
 }

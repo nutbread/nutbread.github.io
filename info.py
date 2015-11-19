@@ -213,6 +213,15 @@ repos = [
 		"tags": [ "c++", "windows", "application" ],
 		"color": "#076fc7", #0774c7
 	},
+	{
+		"name": "pngpp",
+		"name_true": "png++",
+		"name_full": ".PNG image bloater",
+		"description": "Adds useless data to your png images",
+		"url": "https://github.com/nutbread/pngpp",
+		"tags": [ "node.js", "ffmpeg" ],
+		"color": "#b8cf23",
+	},
 ];
 
 

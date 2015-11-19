@@ -95,20 +95,25 @@
 <?
 repository_text = ...?>
 				<div class="repository repository_{0:s} repository_color_indicator"><div class="repository_inner">
-					<a class="repository_info link_external" href="https://nutbread.github.io/{0:s}/">
+					<a class="repository_info link_external" href="{2:s}">
 						<div class="repository_name_container">
-							<span class="repository_name light_underline"><span>{0:s}</span></span><span class="repository_name_separator">/</span>
+							<span class="repository_name light_underline"><span>{1:s}</span></span><span class="repository_name_separator">/</span>
 						</div><div class="repository_description_container">
-							<div class="repository_description_title_container"><div class="repository_name_sizer repository_name"></div><div class="repository_name_sizer repository_name_separator"></div><div class="repository_description_title"><span>{1:s}</span></div></div>
-							<div class="repository_description">{2:s}</div>
+							<div class="repository_description_title_container"><div class="repository_name_sizer repository_name"></div><div class="repository_name_sizer repository_name_separator"></div><div class="repository_description_title"><span>{3:s}</span></div></div>
+							<div class="repository_description">{4:s}</div>
 						</div>
 					</a>
-					{3:s}
+					{5:s}
 				</div></div>
 <?... ;
 
 for r in repos:
-	pyp.write(repository_text.format(r["name"], r["name_full"], r["description"], generate_repository_tags(r)));
+	name = r["name"];
+	name_true = name;
+	if ("name_true" in r): name_true = r["name_true"];
+	url = "https://nutbread.github.io/{0:s}/".format(name);
+	if ("url" in r): url = r["url"];
+	pyp.write(repository_text.format(name, name_true, url, r["name_full"], r["description"], generate_repository_tags(r)));
 
 ?>
 			</div>
