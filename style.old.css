@@ -972,6 +972,34 @@ a.gist_title_name_link>span {
 	color: #4195dc;
 }
 
+.region_robot a:not(.light_underline) {
+	color: #076fc7;
+}
+.region_robot a.light_underline>span {
+	color: #076fc7;
+}
+.region_robot a.light_nohover_color_hover:hover {
+	color: #076fc7;
+}
+.region_robot .colored {
+	color: #076fc7;
+}
+.region_robot *::selection {
+	background: #076fc7;
+}
+.region_robot *::-moz-selection {
+	background: #076fc7;
+}
+.region_robot .color_indicator {
+	border-left-color: #076fc7;
+}
+.region_robot a.region_description_tag {
+	color: #076fc7;
+}
+.region_robot a.region_description_tag.region_description_tag_selected>span {
+	color: #076fc7;
+}
+
 .region_ave a:not(.light_underline) {
 	color: #1257e3;
 }

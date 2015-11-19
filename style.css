@@ -1222,6 +1222,38 @@ a.settings_tag>span {
 	color: #4195dc;
 }
 
+.repository_robot a:not(.light_underline) {
+	color: #076fc7;
+}
+.repository_robot .light_underline>span {
+	color: #076fc7;
+}
+.repository_robot .light_nohover_color_hover:hover {
+	color: #076fc7;
+}
+.repository_robot .colored_underline {
+	color: #076fc7;
+}
+.repository_robot .colored {
+	color: #076fc7;
+}
+.repository_robot ::selection {
+	background-color: #076fc7;
+}
+.repository_robot ::-moz-selection {
+	background-color: #076fc7;
+}
+.repository_robot.repository_color_indicator,
+.repository_robot .repository_color_indicator {
+	border-left-color: #076fc7;
+}
+.repository_robot .repository_tag {
+	color: #076fc7;
+}
+.repository_robot x.repository_tag.repository_tag_selected>span {
+	color: #076fc7;
+}
+
 .repository_ave a:not(.light_underline) {
 	color: #1257e3;
 }

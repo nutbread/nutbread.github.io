@@ -206,6 +206,13 @@ repos = [
 		"tags": [ "c++", "library", "noise" ],
 		"color": "#1cb327",
 	},
+	{
+		"name": "robot",
+		"name_full": "Text-to-Speech Overlay",
+		"description": "An application that can send text-to-speech voice to audio devices in real time",
+		"tags": [ "c++", "windows", "application" ],
+		"color": "#076fc7", #0774c7
+	},
 ];
 
 
