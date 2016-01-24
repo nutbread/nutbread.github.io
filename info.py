@@ -340,6 +340,13 @@ gists = [
 		"description": "A JavaScript method of stopping CSS transitions while they're active",
 		"url": "https://gist.github.com/nutbread/cece7128350dbdbb7271",
 		"type": "html",
+	},
+	{
+		"name": "C++ static initialization",
+		"main_file": "StaticInit.cpp",
+		"description": "Easily create static (de)initialization functions without having to manually write each function into main. For g++ and VC++",
+		"url": "https://gist.github.com/nutbread/51ce7d4a265c3d98fc4d",
+		"type": "cpp",
 	}
 ];
 
