@@ -347,6 +347,13 @@ gists = [
 		"description": "Easily create static (de)initialization functions without having to manually write each function into main. For g++ and VC++",
 		"url": "https://gist.github.com/nutbread/51ce7d4a265c3d98fc4d",
 		"type": "cpp",
+	},
+	{
+		"name": "C++11 field iteration using macros and templates",
+		"main_file": "Fields.hpp",
+		"description": "Easily iterate over fields defined inside of a class. For g++ and VC++",
+		"url": "https://gist.github.com/nutbread/1a3d51df81577eac2df0",
+		"type": "cpp",
 	}
 ];
 
